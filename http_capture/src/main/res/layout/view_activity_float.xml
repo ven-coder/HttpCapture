@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_com_levine_hc_activity_float"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_com_levine_hc_http_log"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_activity_float"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="请求\n日志"
+        android:textColor="@android:color/white"
+        android:textSize="12dp" />
+
+</FrameLayout>
