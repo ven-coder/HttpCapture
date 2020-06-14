@@ -70,7 +70,7 @@ class NetRequestRecordActivity : AppCompatActivity(), LocalNetRecordIO.CallBack,
         tv_list_time.text = data?.request?.time
         tv_list_url.text = data.request.method + "：" + data?.request?.url
         tv_list_url.requestLayout()
-        tv_list_status.text = "状态：" + data?.response?.status.toString()
+        tv_list_status.text = "code：" + data?.response?.status.toString()
         val headerString =
             tv_list_time.text.toString() + "\n" + tv_list_url.text.toString() + "\n" + tv_list_status.text.toString()
         tv_list_expansion_switch.text = if (data?.isExpansion!!) "收起" else "点击查看"

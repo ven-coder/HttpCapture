@@ -37,7 +37,7 @@ class ListAdapter : RecyclerView.Adapter<ListViewHolder>() {
         bean.position = position + 1
         view.tvTime?.text = bean.request.time
         view.tvUrl?.text = bean.request.method + "：" + bean.request.url
-        view.tvStatus?.text = "状态：" + bean.response.status
+        view.tvStatus?.text = "code：" + bean.response.status
         var headerString =
             view.tvTime.text.toString() + "\n" + view.tvUrl?.text.toString() + "\n" + view.tvStatus?.text.toString()
         view.tvCopyHeader.setOnClickListener { copyString(it.context, headerString) }
