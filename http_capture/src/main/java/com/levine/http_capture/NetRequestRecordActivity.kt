@@ -137,6 +137,7 @@ class NetRequestRecordActivity : AppCompatActivity(), LocalNetRecordIO.CallBack,
 
     override fun onItemExpansionSwitch(data: CaptureBean.Data, position: Int) {
         data.isExpansion = !data.isExpansion
+        tv_list_expansion_switch.text = if (data.isExpansion) "收起" else "点击查看"
         mListAdapter?.notifyItemChanged(position)
         recycler_view.scrollToPosition(position)
     }
