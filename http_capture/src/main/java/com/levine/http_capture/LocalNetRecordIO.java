@@ -10,6 +10,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.TimeUtils;
 
 import java.io.EOFException;
+import java.net.URLDecoder;
 import java.nio.charset.Charset;
 
 import okhttp3.MediaType;
@@ -129,7 +130,7 @@ public class LocalNetRecordIO {
                         if (param.length < 2) continue;
                         CaptureBean.Data.RequestBean.ParameterBean parameterBean = new CaptureBean.Data.RequestBean.ParameterBean();
                         parameterBean.setKey(param[0]);
-                        parameterBean.setValue(param[1]);
+                        parameterBean.setValue(URLDecoder.decode(param[1],"UTF-8"));
                         if (convert == null) {
                             captureBean.getRequest().getParameter().add(parameterBean);
                         } else {

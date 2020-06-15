@@ -23,14 +23,13 @@ class MainActivity : AppCompatActivity() {
             .addHeader("Header-2", "Header2")
             .post(
                 FormBody.Builder()
-                    .add("param_1", "param_value_1")
-                    .add("param_2", "param_value_2")
+                    .add("param_1", "param_value_1++dsafaad++--===")
                     .build()
             ).build()
         HCLog.log(arrayOf("请求参数"))
 
         val okHttpClient = OkHttpClient().newBuilder()
-        okHttpClient.addInterceptor(HttpCaptureInterceptor())
+        okHttpClient.addInterceptor(HttpCaptureInterceptor(NetDataConvert()))
         tv_test.setOnClickListener {
             val call = okHttpClient.build().newCall(request)
             call.enqueue(object : Callback {
