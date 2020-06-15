@@ -2,6 +2,8 @@
 ### 抓取自身APP的网络请求，方便测试、后端、及自己调试查看APP的网络请求情况
 ![效果动图](https://images.gitee.com/uploads/images/2020/0615/211612_bd2bd9cf_1032805.gif "ezgif.com-gif-maker.gif")
 
+ **看不到动图可以到我的码云仓库看[点击跳转码云](https://gitee.com/BDWen/HttpCapture)**
+
 ## 集成
  **1. 项目根目录的build.gradle中添加**
 
