@@ -3,8 +3,6 @@ package com.levine.http_capture
 import android.content.*
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Looper
-import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -12,11 +10,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.*
-import kotlinx.android.synthetic.main.view_refresh_list.*
-import java.lang.Exception
+import kotlinx.android.synthetic.main.view_com_levine_http_capture_refresh_list.*
 
 /**
  * 标题：
@@ -35,14 +31,14 @@ class NetRequestRecordActivity : AppCompatActivity(), LocalNetRecordIO.CallBack,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.view_refresh_list)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setContentView(R.layout.view_com_levine_http_capture_refresh_list)
+        val tlToolbar = findViewById<Toolbar>(R.id.tl_toolbar)
+        setSupportActionBar(tlToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         BarUtils.setStatusBarLightMode(this, false)
         BarUtils.setStatusBarColor(this, Color.BLACK)
-        BarUtils.addMarginTopEqualStatusBarHeight(toolbar)
+        BarUtils.addMarginTopEqualStatusBarHeight(tlToolbar)
         ll_list_header.visibility = View.GONE
         val gridLayoutManager = GridLayoutManager(this, 1)
         recycler_view.layoutManager = gridLayoutManager
