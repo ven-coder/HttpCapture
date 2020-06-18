@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
+import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.PathUtils
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
@@ -61,6 +62,11 @@ object HCLib {
 
     fun isEnableActivityFloatView(isEnableActivityFloatView: Boolean) {
         this.isEnableActivityFloatView = isEnableActivityFloatView
+        if (!isEnableActivityFloatView)FileUtils.delete(Constant.SAVE_PATH)
+    }
+
+    fun isEnableActivityFloatView(): Boolean {
+        return this.isEnableActivityFloatView
     }
 
     /**

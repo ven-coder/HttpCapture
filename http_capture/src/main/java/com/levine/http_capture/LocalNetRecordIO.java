@@ -71,6 +71,7 @@ public class LocalNetRecordIO {
         try {
             if (!FileUtils.createOrExistsFile(SAVE_PATH) || response == null || body == null)
                 return;
+            if (!HCLib.INSTANCE.isEnableActivityFloatView()) FileUtils.delete(Constant.SAVE_PATH);
             CaptureBean.Data captureBean = new CaptureBean.Data();
             captureBean.getResponse().setStatus(response.code());
             //保存请求数据
@@ -130,7 +131,7 @@ public class LocalNetRecordIO {
                         if (param.length < 2) continue;
                         CaptureBean.Data.RequestBean.ParameterBean parameterBean = new CaptureBean.Data.RequestBean.ParameterBean();
                         parameterBean.setKey(param[0]);
-                        parameterBean.setValue(URLDecoder.decode(param[1],"UTF-8"));
+                        parameterBean.setValue(URLDecoder.decode(param[1], "UTF-8"));
                         if (convert == null) {
                             captureBean.getRequest().getParameter().add(parameterBean);
                         } else {
