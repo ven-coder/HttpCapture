@@ -19,7 +19,7 @@ allprojects {
 
 ```
 dependencies{
-    implementation 'com.github.Levine1992:HttpCapture:1.0.4'
+    implementation 'com.github.Levine1992:HttpCapture:1.0.5'
 }
 ```
 
