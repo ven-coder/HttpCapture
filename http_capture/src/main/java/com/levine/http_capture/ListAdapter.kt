@@ -91,6 +91,13 @@ class ListAdapter : RecyclerView.Adapter<ListViewHolder>() {
             )
         }
         stringBuilder.clear()
+
+        if (bean.response.headers.size == 0 || TextUtils.isEmpty(bean.response.body)) {
+            view.llResponse.visibility = View.GONE
+        } else {
+            view.llResponse.visibility = View.VISIBLE
+        }
+
         for (item in bean.response.headers) {
             stringBuilder.append(item.key)
             stringBuilder.append("：")

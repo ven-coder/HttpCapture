@@ -76,6 +76,7 @@ public class CaptureBean {
             private String url;
             private String method;
             private String time;
+            private String requestTag;
 
             public String getMethod() {
                 return method;
@@ -95,6 +96,14 @@ public class CaptureBean {
 
             public void setUrlParameters(List<UrlParameterBean> urlParameters) {
                 this.urlParameters = urlParameters;
+            }
+
+            public String getRequestTag() {
+                return requestTag;
+            }
+
+            public void setRequestTag(String requestTag) {
+                this.requestTag = requestTag;
             }
 
             public String getTime() {

@@ -34,7 +34,9 @@ public class HttpCaptureInterceptor implements Interceptor {
      * 请求处理
      */
     private Request request(Request request) {
-        return request;
+        Request requestTag = request.newBuilder().addHeader("REQUEST_TAG", request.hashCode() + "").build();
+        LocalNetRecordIO.saveRequest(requestTag, mConvert);
+        return requestTag;
     }
 
     /**
@@ -52,7 +54,7 @@ public class HttpCaptureInterceptor implements Interceptor {
                 charset = contentType.charset(charset);
             }
             String body = buffer.clone().readString(charset);
-            LocalNetRecordIO.save(body, response.newBuilder().build(), mConvert);
+            LocalNetRecordIO.saveResponse(body, response.newBuilder().build(), mConvert);
         } catch (Exception e) {
         }
         return response;

@@ -26,6 +26,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
     TextView tvPosition;
     TextView tvCopyRequestUrlParameter;
     TextView tvRequestUrlParameter;
+    LinearLayout llResponse;
 
     public ListViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -47,6 +48,8 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
         tvPosition = (TextView) itemView.findViewById(R.id.tv_position);
         tvCopyRequestUrlParameter = (TextView) itemView.findViewById(R.id.tv_copy_request_url_parameter);
         tvRequestUrlParameter = (TextView) itemView.findViewById(R.id.tv_request_url_parameter);
+
+        llResponse = (LinearLayout) itemView.findViewById(R.id.ll_response);
 
     }
 }
