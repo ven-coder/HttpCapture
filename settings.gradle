@@ -1,3 +1,2 @@
-include ':netcapture'
 rootProject.name='HttpCaptureDemo'
-include ':app', ':http_capture'
+include ':app', ':netcapture'
