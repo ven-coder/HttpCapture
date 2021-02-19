@@ -1,8 +1,8 @@
 package com.levine.httpcapturedemo;
 
 import com.blankj.utilcode.util.LogUtils;
-import com.levine.http_capture.CaptureBean;
-import com.levine.http_capture.HCNetDataConvert;
+import com.levine.netcapture.CaptureBean;
+import com.levine.netcapture.HCNetDataConvert;
 
 import org.jetbrains.annotations.NotNull;
 

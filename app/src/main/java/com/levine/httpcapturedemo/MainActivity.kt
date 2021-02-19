@@ -3,9 +3,8 @@ package com.levine.httpcapturedemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.blankj.utilcode.util.*
-import com.levine.http_capture.HCLog
-import com.levine.http_capture.HttpCaptureInterceptor
-import com.levine.http_capture.NetRequestRecordActivity
+import com.levine.netcapture.NCPInterceptor
+import com.levine.netcapture.NetCaptureRecordActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 //import okhttp3.logging.HttpLoggingInterceptor
@@ -26,19 +25,18 @@ class MainActivity : AppCompatActivity() {
                     .add("param_1", "param_value_1++dsafaad++--===")
                     .build()
             ).build()
-        HCLog.log(arrayOf("请求参数"))
 
         val okHttpClient = OkHttpClient().newBuilder()
-        okHttpClient.addInterceptor(HttpCaptureInterceptor(NetDataConvert()))
+        okHttpClient.addInterceptor(NCPInterceptor(NetDataConvert()))
         tv_test.setOnClickListener {
             val call = okHttpClient.build().newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
-                    NetRequestRecordActivity.launch(this@MainActivity)
+                    NetCaptureRecordActivity.launch(this@MainActivity)
                 }
 
                 override fun onResponse(call: Call, response: Response) {
-                    NetRequestRecordActivity.launch(this@MainActivity)
+                    NetCaptureRecordActivity.launch(this@MainActivity)
                 }
             })
         }

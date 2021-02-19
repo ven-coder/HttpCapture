@@ -1,0 +1,9 @@
+/*.bin
+/*.iml
+.DS_Store
+/.gradle
+/.gradletasknamecache
+/.idea
+/bin
+/build
+/local.properties
